@@ -201,13 +201,12 @@ class wp_multisite_cron{
 		    	}
 	    	
 		    	//Launch :)
-		    	$running = null;
+		    	$still_running = null;
 		    	do{
 		    		curl_multi_exec($mh, $still_running);
 		    	}while($still_running > 0);
-		    	
-		    	curl_multi_close($mh);
-		    }
+		}	
+	    	curl_multi_close($mh); 
     	}
     	die();
     }
